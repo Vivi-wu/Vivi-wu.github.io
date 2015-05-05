@@ -1,1 +1,144 @@
-Hello World
+<!DOCTYPE html>
+<html class="responsive">
+<head>
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="grid.css">
+  <link rel="stylesheet" href="stylesheet.css">
+  <script src="javascript.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+</head>
+<body>
+
+<div class="container bf-container">
+
+<h1>Send us a brief</h1>
+<p>
+  Please share some details in the simple form below. If you really don't like forms, of course email us at <a href="mailto:BriefUs@mobilenowgroup.com">BriefUs@mobilenowgroup.com</a>
+</p>
+
+<form class="eight units no_margin" id="brief-form">
+  <div class="bf-group av_one_half first">
+    <label for="usrname">Your name <em>*</em></label>
+    <input type="text" name="usrname" id="usrname" class="form-control" placeholder="Bilbo Baggins" autofocus required>
+  </div>
+  <div class="bf-group av_one_half second">
+    <label for="usrmail">Your email <em>*</em></label>
+    <input type="email" name="usrmail" id="usrmail" class="form-control" placeholder="yangwei5198@163.com" required>
+  </div>
+  <div class="bf-group unit alpha">
+    <label for="prjname">Project name <em>*</em></label>
+    <input type="text" name="prjname" id="prjname" class="form-control" required>
+  </div>
+
+  <span class="chkbx-label">Assistance required with <em>*</em></span>
+  <div class="bf-group unit alpha" id="ast-checkbox">
+    <div class="no_margin av_one_fourth">
+      <label for="ast-consult">Consulting</label>
+      <input type="checkbox" name="assistance" id="ast-consult" value="consulting">
+    </div>
+    <div class="no_margin av_one_fourth">
+      <label for="ast-design">UI/UX Design</label>
+      <input type="checkbox" name="assistance" id="ast-design" value="UI/UX Design">
+    </div>
+    <div class="no_margin av_one_fourth">
+      <label for="ast-develop">Development</label>
+      <input type="checkbox" name="assistance" id="ast-develop" value="development">
+    </div>
+    <div class="no_margin av_one_fourth">
+      <label for="ast-market">Marketing</label>
+      <input type="checkbox" name="assistance" id="ast-market" value="marketing">
+    </div>
+  </div>
+
+  <span class="chkbx-label">Build</span>
+  <div class="bf-group unit alpha checkbox-list">
+    <div class="no_margin av_one_fourth">
+      <input type="checkbox" name="build" id="build1" value="ios">
+      <label for="build1"><span></span>IOS</label>
+    </div>
+    <div class="no_margin av_one_fourth">
+      <input type="checkbox" name="build" id="build2" value="android">
+      <label for="build2"><span></span>Android</label>
+    </div>
+    <div class="no_margin av_one_fourth">
+      <input type="checkbox" name="build" id="build3" value="phone">
+      <label for="build3"><span></span>Phone</label>
+    </div>
+    <div class="no_margin av_one_fourth">
+      <input type="checkbox" name="build" id="build4" value="tablet">
+      <label for="build4"><span></span>Tablet</label>
+    </div>
+    <div class="no_margin av_one_fourth">
+      <input type="checkbox" name="build" id="build5" value="game">
+      <label for="build5"><span></span>Game</label>
+    </div>
+    <div class="no_margin av_one_fourth">
+      <input type="checkbox" name="build" id="build6" value="wechat">
+      <label for="build6"><span></span>WeChat</label>
+    </div>
+    <div class="no_margin av_one_fourth">
+      <input type="checkbox" name="build" id="build7" value="responsive">
+      <label for="build7"><span></span>Responsive</label>
+    </div>
+  </div>
+
+  <div class="bf-group unit alpha">
+    <label for="kfunction">Key functionality</label>
+    <input type="textarea" name="kfunction" id="kfunction" class="form-control">
+  </div>
+  <div class="bf-group unit alpha">
+    <label for="trgtuser">Target audience</label>
+    <input type="textarea" name="trgtuser" id="trgtuser" class="form-control">
+  </div>
+
+  <span class="chkbx-label">Languages</span>
+  <div class="bf-group unit alpha checkbox-list">
+    <div class="no_margin av_one_fourth">
+      <input type="checkbox" name="language" id="lang1" value="english">
+      <label for="lang1"><span></span>English</label>
+    </div>
+    <div class="no_margin av_one_fourth">
+      <input type="checkbox" name="language" id="lang2" value="simplifiedchinese">
+      <label for="lang2"><span></span>Simplified Chinese</label>
+    </div>
+    <div class="no_margin av_one_fourth">
+      <input type="checkbox" name="language" id="lang3" value="traditionalchinese">
+      <label for="lang3"><span></span>Traditional Chinese</label>
+    </div>
+    <div class="no_margin av_one_fourth">
+      <input type="checkbox" name="language" id="lang4" value="french">
+      <label for="lang4"><span></span>French</label>
+    </div>
+    <div class="no_margin av_one_fourth">
+      <input type="checkbox" name="language" id="lang5" value="spanish">
+      <label for="lang5"><span></span>Spanish</label>
+    </div>
+    <div class="no_margin av_one_fourth">
+      <input type="checkbox" name="language" id="lang6" value="japanese">
+      <label for="lang6"><span></span>Japanese</label>
+    </div>
+    <div class="no_margin av_one_fourth">
+      <input type="checkbox" name="language" id="lang0" value="other">
+      <label for="lang0"><span></span>Other</label>
+    </div>
+  </div>
+
+  <div class="bf-group av_one_half first">
+    <label for="bgtallocation">Budget allocation</label>
+    <input type="text" name="bgtallocation" id="bgtallocation" class="form-control">
+  </div>
+  <div class="bf-group av_one_half second">
+    <label for="lchdate">Target launch date</label>
+    <input type="text" name="lchdate" id="lchdate" class="form-control">
+  </div>
+  <div class="bf-group unit alpha">
+    <label for="atchfile">Attach a more detailed brief</label>
+    <input type="file" name="atchfile" id="atchfile">
+  </div>
+  <hr>
+  <input type="submit" value="Send" class="two units no_margin">
+</form>
+</div>
+
+</body>
+</html>
