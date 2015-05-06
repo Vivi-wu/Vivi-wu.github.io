@@ -95,10 +95,10 @@ a {color: #8718a0;}
     height: 19px;
     margin-right: 5px;
     vertical-align: middle;
-    background: url("images/default_tickbox.png") 0 1px no-repeat;
+    background: url("images/tickbox.png") left top no-repeat;
 }
 .checkbox-list input[type="checkbox"]:checked+label span {
-    background: url("images/checked_tickbox.png") no-repeat;
+    background: url("images/tickbox.png") -16px top no-repeat;
 }
 
 .bf-container hr {
