@@ -36,32 +36,38 @@ a {color: #8718a0;}
   border-radius: 2px;
   text-indent: 10px;
 }
-.bf-group textarea {height: 100px !important;}
-.bf-group>label, .chkbx-label {
+.bf-group textarea {
+  height: 100px !important;
+  padding: 0; /* override browser default setting */
+}
+.bf-group > label, .bf-label {
   display: inline-block;
   margin-bottom: 10px;
   color: #6c6e73;
 }
 /* label for input field */
-.bf-group>label {max-width: 100%;}
+.bf-group > label {max-width: 100%;}
 /* label for checkbox list */
-.chkbx-label {width: 100%;}
+.bf-label {width: 100%;}
 
 .bf-container em {
   font-style: initial;
   color: #8718a0;
 }
 
-.bf-container input[type="checkbox"] {display: none;}
+.bf-container input[type="checkbox"],
+.bf-container input[type="file"] {
+  display: none;
+}
 
 /* assitance Checkbox list */
 #ast-checkbox {
   border: 1px solid #e1e1e1;
   border-radius: 2px;
 }
-#ast-checkbox>div:first-child,
-#ast-checkbox>div:nth-of-type(2),
-#ast-checkbox>div:nth-of-type(3) {
+#ast-checkbox > div:first-child,
+#ast-checkbox > div:nth-of-type(2),
+#ast-checkbox > div:nth-of-type(3) {
   border-right: 1px solid #e1e1e1;
   margin-right: -1px;
 }
@@ -80,16 +86,16 @@ a {color: #8718a0;}
   margin-bottom: 15px;
   background-position: center;
 }
-#ast-checkbox>div:first-child label {background-image: url("images/consulting_icon.png");}
-#ast-checkbox>div:nth-of-type(2) label {background-image: url("images/UIdesign_icon.png");}
-#ast-checkbox>div:nth-of-type(3) label {background-image: url("images/development_icon.png");}
-#ast-checkbox>div:nth-of-type(4) label {background-image: url("images/marketing_icon.png");}
-#ast-checkbox input[type="checkbox"]:checked+label span {background-image: url("images/ast_checked.png"); }
+#ast-checkbox > div:first-child label {background-image: url("images/consulting_icon.png");}
+#ast-checkbox > div:nth-of-type(2) label {background-image: url("images/UIdesign_icon.png");}
+#ast-checkbox > div:nth-of-type(3) label {background-image: url("images/development_icon.png");}
+#ast-checkbox > div:nth-of-type(4) label {background-image: url("images/marketing_icon.png");}
+#ast-checkbox input[type="checkbox"]:checked + label span {background-image: url("images/ast_checked.png"); }
 
 /* Build & Languages Checkbox list */
 .checkbox-list .av_one_fourth {margin-bottom: 10px;}
-.checkbox-list input[type="checkbox"]+label {cursor: pointer;}
-.checkbox-list input[type="checkbox"]+label span {
+.checkbox-list input[type="checkbox"] + label {cursor: pointer;}
+.checkbox-list input[type="checkbox"] + label span {
     display: inline-block;
     width: 16px;
     height: 19px;
@@ -97,8 +103,48 @@ a {color: #8718a0;}
     vertical-align: middle;
     background: url("images/tickbox.png") left top no-repeat;
 }
-.checkbox-list input[type="checkbox"]:checked+label span {
+.checkbox-list input[type="checkbox"]:checked + label span {
     background: url("images/tickbox.png") -16px top no-repeat;
+}
+
+#attachment {
+  background-color: #f5f5f5;
+  padding-bottom: 18px;
+  border: 1px dashed #e1e1e1;
+  border-radius: 2px;
+  text-align: center;
+}
+#filesToUpload {
+  border-bottom: 1px dashed #e1e1e1;
+  padding: 9px;
+  text-align: left;
+}
+#filesToUpload .outerbox {
+  display: inline-block;
+  border: 1px solid #d8bbd5;
+  border-radius: 2px;
+  background-color: #e9dbe7;
+  margin: 4px 15px 4px 4px;
+  padding: 5px 10px;
+  color: #96358c;
+  position: relative;
+}
+#filesToUpload .outerbox span {
+  background: url("images/clip.png") left top no-repeat;
+  width: 17px;
+  height: 17px;
+  position: absolute;
+  top: -5px;
+  left: -3px;
+}
+#attachment label {
+  margin-top: 15px;
+  font-size: 18px;
+  color: #626262;
+}
+#attachment > span {
+  display: block;
+  color: #b0b0b0;
 }
 
 .bf-container hr {
@@ -135,10 +181,10 @@ a {color: #8718a0;}
 /*  #Mobile (Portrait)
 ================================================== */
 @media only screen and (max-width: 767px) {
-  
+  .bf-container .hidden-xs {display: none;}
 }
 /* #Mobile (Landscape)
 ================================================== */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
-  
+  .bf-container .hidden-xs {display: none;}
 }
