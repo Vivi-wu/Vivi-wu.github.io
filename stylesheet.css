@@ -75,7 +75,6 @@ a {color: #8718a0;}
   background-position: center 25px;
 }
 #ast-checkbox label span {
-  min-width: 122px;
   min-height: 122px;
   margin-bottom: 15px;
   background-position: center;
@@ -84,7 +83,7 @@ a {color: #8718a0;}
 #ast-checkbox>div:nth-of-type(2) label {background-image: url("images/UIdesign_icon.png");}
 #ast-checkbox>div:nth-of-type(3) label {background-image: url("images/development_icon.png");}
 #ast-checkbox>div:nth-of-type(4) label {background-image: url("images/marketing_icon.png");}
-#ast-checkbox input[type="checkbox"]:checked+label span {background-image: url("images/ast_checkbox_checked.png"); }
+#ast-checkbox input[type="checkbox"]:checked+label span {background-image: url("images/ast_checked.png"); }
 
 /* Build & Languages Checkbox list */
 .checkbox-list .av_one_fourth {margin-bottom: 10px;}
