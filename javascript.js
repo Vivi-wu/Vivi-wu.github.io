@@ -57,7 +57,6 @@ function validateForm() {
 }
 
 window.onload = function() {
-  document.getElementById("filesToUpload").style.display = "none";
   uploadFiles();
   validateForm();
 };
