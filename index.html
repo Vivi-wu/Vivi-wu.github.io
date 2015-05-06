@@ -30,7 +30,7 @@
     <input type="text" name="prjname" id="prjname" class="form-control" required>
   </div>
 
-  <span class="chkbx-label">Assistance required with <em>*</em></span>
+  <span class="bf-label">Assistance required with <em>*</em></span>
   <div class="bf-group unit alpha" id="ast-checkbox">
     <div class="no_margin av_one_fourth">
       <input type="checkbox" name="assistance" id="assistance1" value="consulting">
@@ -50,7 +50,7 @@
     </div>
   </div>
 
-  <span class="chkbx-label">Build</span>
+  <span class="bf-label">Build</span>
   <div class="bf-group unit alpha checkbox-list">
     <div class="no_margin av_one_fourth">
       <input type="checkbox" name="build" id="build1" value="ios">
@@ -83,7 +83,7 @@
   </div>
 
   <div class="bf-group">
-    <span class="chkbx-label">Key functionality</span>
+    <span class="bf-label">Key functionality</span>
     <textarea name="kfunction" class="form-control" rows="4"></textarea>
   </div>
   <div class="bf-group unit alpha">
@@ -91,7 +91,7 @@
     <input type="text" name="trgtuser" id="trgtuser" class="form-control">
   </div>
 
-  <span class="chkbx-label">Languages</span>
+  <span class="bf-label">Languages</span>
   <div class="bf-group unit alpha checkbox-list">
     <div class="no_margin av_one_fourth">
       <input type="checkbox" name="language" id="lang1" value="english">
@@ -131,9 +131,13 @@
     <label for="lchdate">Target launch date</label>
     <input type="text" name="lchdate" id="lchdate" class="form-control">
   </div>
-  <div class="bf-group unit alpha">
-    <label for="atchfile">Attach a more detailed brief</label>
-    <input type="file" name="atchfile" id="atchfile">
+
+  <span class="bf-label hidden-xs">Attach a more detailed brief</span>
+  <div class="bf-group unit alpha hidden-xs" id="attachment">
+    <div id="filesToUpload"></div>
+    <label for="atchfile">Tap here to upload</label>
+    <input type="file" name="atchfile" id="atchfile" accept=".doc,.docx,.pdf,image/*" multiple>
+    <span>(Please ensure attachments are less than 10MB)</span>
   </div>
   <hr>
   <input type="submit" value="Send" class="two units no_margin">
