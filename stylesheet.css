@@ -115,6 +115,7 @@ a {color: #8718a0;}
   text-align: center;
 }
 #filesToUpload {
+  display: none;
   border-bottom: 1px dashed #e1e1e1;
   padding: 9px;
   text-align: left;
