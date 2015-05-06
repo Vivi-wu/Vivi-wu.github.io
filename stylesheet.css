@@ -36,25 +36,24 @@ a {color: #8718a0;}
   border-radius: 2px;
   text-indent: 10px;
 }
-
-/* label for input field */
-.bf-group>label {max-width: 100%;}
-/* label for checkbox list */
-.chkbx-label {width: 100%;}
 .bf-group>label, .chkbx-label {
   display: inline-block;
   margin-bottom: 10px;
   color: #6c6e73;
 }
+/* label for input field */
+.bf-group>label {max-width: 100%;}
+/* label for checkbox list */
+.chkbx-label {width: 100%;}
 
 .bf-container em {
   font-style: initial;
   color: #8718a0;
 }
 
-/*
-  assitance checkbox list
-*/
+.bf-container input[type="checkbox"] {display: none;}
+
+/* assitance Checkbox list */
 #ast-checkbox {
   border: 1px solid #e1e1e1;
   border-radius: 2px;
@@ -65,28 +64,29 @@ a {color: #8718a0;}
   border-right: 1px solid #e1e1e1;
   margin-right: -1px;
 }
-#ast-checkbox label {
+#ast-checkbox label, #ast-checkbox label span {
   display: block;
-  text-align: center;
-  padding: 25px 25px 15px;
-  cursor: pointer;
-}
-#ast-checkbox label::before {
-  display: block;
-  width: 100%;
-  height: 128px;
-  margin-bottom: 10px;
-  content: "";
-  background-size: 100%;
   background-repeat: no-repeat;
 }
-#ast-checkbox>div:first-child label::before {background-image: url("images/consulting_icon.png");}
-#ast-checkbox>div:nth-of-type(2) label::before {background-image: url("images/UIdesign_icon.png");}
-#ast-checkbox>div:nth-of-type(3) label::before {background-image: url("images/development_icon.png");}
-#ast-checkbox>div:nth-of-type(4) label::before {background-image: url("images/marketing_icon.png");}
+#ast-checkbox label {
+  text-align: center;
+  padding: 25px 0 18px;
+  cursor: pointer;
+  background-position: center 25px;
+}
+#ast-checkbox label span {
+  min-width: 122px;
+  min-height: 122px;
+  margin-bottom: 15px;
+  background-position: center;
+}
+#ast-checkbox>div:first-child label {background-image: url("images/consulting_icon.png");}
+#ast-checkbox>div:nth-of-type(2) label {background-image: url("images/UIdesign_icon.png");}
+#ast-checkbox>div:nth-of-type(3) label {background-image: url("images/development_icon.png");}
+#ast-checkbox>div:nth-of-type(4) label {background-image: url("images/marketing_icon.png");}
+#ast-checkbox input[type="checkbox"]:checked+label span {background-image: url("images/ast_checkbox_checked.png"); }
 
-.bf-container input[type="checkbox"] {display: none;}
-
+/* Build & Languages Checkbox list */
 .checkbox-list .av_one_fourth {margin-bottom: 10px;}
 .checkbox-list input[type="checkbox"]+label {cursor: pointer;}
 .checkbox-list input[type="checkbox"]+label span {
@@ -97,7 +97,7 @@ a {color: #8718a0;}
     vertical-align: middle;
     background: url("images/default_tickbox.png") 0 1px no-repeat;
 }
-.checkbox-list input[type="checkbox"]:checked + label span {
+.checkbox-list input[type="checkbox"]:checked+label span {
     background: url("images/checked_tickbox.png") no-repeat;
 }
 
