@@ -27,7 +27,7 @@ a {color: #8718a0;}
 #brief-form .av_one_fourth {float: left;}
 
 /* input field of breif form */
-.bf-group {margin-bottom: 25px;}
+.bf-group {margin-bottom: 25px !important;}
 .bf-group .form-control {
   display: block;
   width: 100%;
@@ -36,6 +36,7 @@ a {color: #8718a0;}
   border-radius: 2px;
   text-indent: 10px;
 }
+.bf-group textarea {height: 100px !important;}
 .bf-group>label, .chkbx-label {
   display: inline-block;
   margin-bottom: 10px;
@@ -99,8 +100,6 @@ a {color: #8718a0;}
 .checkbox-list input[type="checkbox"]:checked+label span {
     background: url("images/checked_tickbox.png") no-repeat;
 }
-
-#kfunction {height: 100px;}
 
 .bf-container hr {
   clear: left;
