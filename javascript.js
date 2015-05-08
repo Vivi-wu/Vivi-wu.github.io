@@ -1,7 +1,8 @@
 function uploadFiles() {
-  var inputElement = document.getElementById("atchfile");
+  var inputElement = document.getElementById("inputFile");
   var filesToUpload = document.getElementById("filesToUpload");
   var txt = "";
+  var nBytes = 0;
 
   inputElement.addEventListener("change", handleFiles, false);
   function handleFiles() {
@@ -10,6 +11,7 @@ function uploadFiles() {
     if (l) {
       for (var i = 0; i < l; i++) {
         txt += "<div class='outerbox'><span></span>" + fileList[i].name + "</div>";
+        nBytes += fileList[i].size;
       }
       filesToUpload.style.display = "block";
       filesToUpload.innerHTML = txt;
@@ -17,6 +19,12 @@ function uploadFiles() {
     else {
       // filesToUpload.style.display = "none";
       return false;
+    }
+
+    /* limit upload file size, Byte to MB */
+    var nApprox = nBytes / (1024*1024);
+    if (nApprox > 10) {
+      alert("Files size is too big.");
     }
   }
 }
