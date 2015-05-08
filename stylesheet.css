@@ -81,6 +81,7 @@ a {color: #8718a0;}
   cursor: pointer;
   background-position: center 25px;
 }
+#ast-checkbox label:hover {background-color: rgba(150, 53, 140, 0.1);}
 #ast-checkbox label span {
   min-height: 122px;
   margin-bottom: 15px;
