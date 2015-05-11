@@ -131,13 +131,20 @@ a {color: #8718a0;}
   color: #96358c;
   position: relative;
 }
-#filesToUpload .outerbox span {
+#filesToUpload .outerbox span:first-child {
   background: url("images/clip.png") left top no-repeat;
   width: 17px;
   height: 17px;
   position: absolute;
   top: -5px;
   left: -3px;
+}
+#filesToUpload .outerbox span:last-child {
+  margin-left: 15px;
+  font-family: sans-serif;
+  color: #6c6e73;
+  font-weight: 700;
+  cursor: pointer;
 }
 #attachment label {
   margin-top: 15px;
