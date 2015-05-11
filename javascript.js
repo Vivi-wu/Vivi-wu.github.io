@@ -1,33 +1,62 @@
-function uploadFiles() {
-  var inputElement = document.getElementById("inputFile");
-  var filesToUpload = document.getElementById("filesToUpload");
-  var txt = "",
-      nBytes = 0,
-      nFiles = "";
+var nFiles = []; // fileToUpload list
+var nBytes = 0; // total size of attachments
 
-  inputElement.addEventListener("change", handleFiles, false);
-  function handleFiles() {
-    var fileList = this.files;
-    var l = fileList.length;
-    if (l) {
-      for (var i = 0; i < l; i++) {
-        txt += "<div class='outerbox'><span></span>" + fileList[i].name + "<span>X</span></div>";
-        nBytes += fileList[i].size;
-      }
-      filesToUpload.style.display = "block";
-      filesToUpload.innerHTML = txt;
-    }
-    else {
-      // filesToUpload.style.display = "none";
-      return false;
-    }
 
-    /* Convert Byte to MB and limit files' total size */
-    var nApprox = nBytes / (1024*1024);
-    if (nApprox > 10) {
-      alert("Files size is too big.");
+function removeFile(elmnt) {
+  var index = elmnt.getAttribute("data-file");
+
+  // remove file from fileToUpload list
+  for (var i = 0, l = nFiles.length; i < l; i++) {
+    if (nFiles[i].name === index) {
+      nBytes -= nFiles[i].size;
+      nFiles.splice(i, 1);
+      break;
     }
   }
+
+  // remove file name tag from the view
+  elmnt.parentNode.parentNode.removeChild(elmnt.parentNode);
+
+  if (!nFiles.length) {document.getElementById("filesToUpload").style.display = "none";}
+}
+
+
+function checkSize() {
+  var nApprox = nBytes / (1024 * 1024); // Convert Byte to MB
+  if (nApprox > 10) {
+    alert("Files' total size pass limit.");
+    return false;
+  }
+}
+
+
+function readFiles() {
+  var filesToUpload = document.getElementById("filesToUpload");
+
+  function handleFiles() {
+    var fileList = this.files; // files is a FileList of File objects
+    var l = fileList.length;
+    var txt = "";
+
+    if (l) {
+      for (var i = 0; i < l; i++) {
+        nFiles.push(fileList[i]);
+        nBytes += fileList[i].size;
+      }
+
+      for (var j = 0, lth = nFiles.length; j < lth; j++) {
+        txt += "<div class='outerbox'><span></span>" + nFiles[j].name + "<span data-file='" + nFiles[j].name + "' onclick='removeFile(this)'>X</span></div>";
+      }
+      filesToUpload.innerHTML = txt;
+      filesToUpload.style.display = "block";
+      checkSize();
+    }
+    else {
+      return false;
+    }
+  }
+
+  document.getElementById("inputFile").addEventListener("change", handleFiles, false);
 }
 
 /* 
@@ -77,7 +106,7 @@ function validateForm() {
 window.onload = function() {
   // Check for the various File API support
   if (window.File && window.FileReader && window.FileList && window.Blob) {
-    uploadFiles();
+    readFiles();
   } else {
     alert("The File APIs are not fully supported in this browser.");
   }
