@@ -9,7 +9,7 @@ a {color: #8718a0;}
   have been used throughout the site. If so, codes above could be removed.
 */
 .bf-container {
-  font-family: "ChollaSlab Bold", "Courier New", serif !important;;
+  font-family: "ChollaSlab Bold", "Courier New", serif !important;
   font-size: 14px;
 }
 .bf-container h1 {
@@ -195,7 +195,7 @@ a {color: #8718a0;}
   margin-bottom: 100px;
   padding-top: 10px;
   padding-bottom: 10px;
-  font-family: "ChollaSlab Bold", "Courier New", serif !important;;
+  font-family: "ChollaSlab Bold", "Courier New", serif !important;
   font-size: 14px;
   color: white;
   cursor: pointer;
@@ -245,5 +245,7 @@ a {color: #8718a0;}
     width: 90px !important;
     margin-left: auto !important;
     margin-right: auto !important;
+    -webkit-appearance: none; /* override mobile Safari default style */
+    -webkit-border-radius: 2px;
   }
 }
