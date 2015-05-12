@@ -1,13 +1,13 @@
-/* I imagine that the brief form page will load all the css file
-   which have been used through out the site, below could be removed.
-*/
 @font-face {
   font-family: "ChollaSlab Bold";
   src: url(ChollaSlabBold.ttf) format("truetype");
 }
 a {color: #8718a0;}
 
-/* --------------------------------------------------------------- */
+/*
+  I imagine that the brief form page will load all the css file which
+  have been used throughout the site. If so, codes above could be removed.
+*/
 .bf-container {
   font-family: "ChollaSlab Bold", "Courier New", serif !important;;
   font-size: 14px;
@@ -17,7 +17,7 @@ a {color: #8718a0;}
   margin-bottom: 30px;
   font-size: 22px;
 }
-.bf-container p {margin-bottom: 20px;}
+.bf-container>p {margin-bottom: 20px;}
 
 #brief-form .av_one_half {
   float: left;
@@ -38,7 +38,7 @@ a {color: #8718a0;}
 }
 .bf-group textarea {
   height: 100px !important;
-  padding: 0; /* override browser default setting */
+  padding: 0; /* override browser default padding */
 }
 .bf-group > label, .bf-label {
   display: inline-block;
@@ -56,7 +56,8 @@ a {color: #8718a0;}
 }
 
 .bf-container input[type="checkbox"],
-.bf-container input[type="file"] {
+.bf-container input[type="file"],
+.display-on-iPhone {
   display: none;
 }
 
@@ -76,10 +77,11 @@ a {color: #8718a0;}
   background-repeat: no-repeat;
 }
 #ast-checkbox label {
-  text-align: center;
-  padding: 25px 0 18px;
-  cursor: pointer;
+  padding-top: 25px;
+  padding-bottom: 18px;
   background-position: center 25px;
+  text-align: center;
+  cursor: pointer;
 }
 #ast-checkbox label:hover {background-color: rgba(150, 53, 140, 0.1);}
 #ast-checkbox label span {
@@ -109,6 +111,7 @@ a {color: #8718a0;}
 .checkbox-list input[type="checkbox"]:checked + label span {
     background: url("images/tickbox.png") -16px top no-repeat;
 }
+
 /* Other languages */
 .other-lang {
   float: left;
@@ -117,22 +120,34 @@ a {color: #8718a0;}
 }
 .other-lang input[type="checkbox"] ~ input {
   margin-left: 5px;
-  width: 79%;
+  width: 264px; /* fixd width as designer said */
   height: 25px;
   border: 1px solid #e1e1e1;
   border-radius: 2px;
   text-indent: 10px;
-  opacity: 0;
+  display: none;
 }
-.other-lang input[type="checkbox"]:checked ~ input {opacity: 1;}
+.other-lang input[type="checkbox"]:checked ~ input {display: inline-block;}
 
-#attachment {
+/* add attachments area */
+.attachment {
   background-color: #f5f5f5;
   padding-bottom: 18px;
   border: 1px dashed #e1e1e1;
   border-radius: 2px;
   text-align: center;
 }
+.attachment label {
+  margin-top: 15px;
+  font-size: 22px;
+  color: #8718a0;
+}
+.attachment > span {
+  display: block;
+  color: #b0b0b0;
+}
+
+/* file-to-upload list */
 #filesToUpload {
   display: none;
   border-bottom: 1px dashed #e1e1e1;
@@ -164,15 +179,6 @@ a {color: #8718a0;}
   font-weight: 700;
   cursor: pointer;
 }
-#attachment label {
-  margin-top: 15px;
-  font-size: 18px;
-  color: #626262;
-}
-#attachment > span {
-  display: block;
-  color: #b0b0b0;
-}
 
 .bf-container hr {
   clear: left;
@@ -185,10 +191,10 @@ a {color: #8718a0;}
   border: none;
   outline: none;
   border-radius: 2px;
-  margin-top: 20px;
+  margin-top: 20px !important;
   margin-bottom: 100px;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   font-family: "ChollaSlab Bold", "Courier New", serif !important;;
   font-size: 14px;
   color: white;
@@ -198,20 +204,46 @@ a {color: #8718a0;}
 /* #Desktop - Large
 ================================================== */
 @media only screen and (min-width: 1140px) {
-  
 }
 /* #Tablet (Portrait)
 ================================================== */
 @media only screen and (min-width: 768px) and (max-width: 989px) {
-  
 }
 /*  #Mobile (Portrait)
 ================================================== */
 @media only screen and (max-width: 767px) {
-  .bf-container .hidden-xs {display: none;}
-}
-/* #Mobile (Landscape)
-================================================== */
-@media only screen and (min-width: 480px) and (max-width: 767px) {
-  .bf-container .hidden-xs {display: none;}
+  #brief-form .av_one_half {width: 100%;}
+  #brief-form .av_one_half.second {margin-left: 0;}
+  .no_margin.av_one_fourth {width: 50%;}
+  #ast-checkbox > div:nth-of-type(3),
+  #ast-checkbox > div:nth-of-type(4) {border-top: 1px solid #e1e1e1;}
+  #ast-checkbox label {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    background-position: center 20px;
+  }
+  #ast-checkbox label span {margin-bottom: 10px;}
+  .checkbox-list .av_one_fourth:first-child,
+  .checkbox-list .av_one_fourth:nth-of-type(2),
+  .checkbox-list .av_one_fourth:nth-of-type(3),
+  .checkbox-list .av_one_fourth:nth-of-type(4) {line-height: 40px;}
+  .languages .av_one_fourth:first-child {max-width: 110px;}
+  .languages .av_one_fourth:nth-of-type(2),
+  .languages .av_one_fourth:nth-of-type(3) {min-width: 154px;}
+  .languages .av_one_fourth:nth-of-type(4) {
+    max-width: 80px;
+    margin-left: 30px;
+  }
+  .other-lang {width: 100%;}
+  .other-lang input[type="checkbox"] ~ input {
+    width: inherit;
+    margin-left: 0;
+  }
+  .bf-container input[type="submit"] {
+    display: block;
+    float: none;
+    width: 90px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
 }

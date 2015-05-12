@@ -24,7 +24,7 @@ function removeFile(elmnt) {
 function checkSize() {
   var nApprox = nBytes / (1024 * 1024); // Convert Byte to MB
   if (nApprox > 10) {
-    alert("Files' total size pass limit.");
+    alert("Files' total size exceed the 10MB limit.");
     return false;
   }
 }
@@ -78,7 +78,7 @@ function checkRequiredInput(event) {
   uEmail = document.getElementById("usrmail").value;
   if (uEmail === null || uEmail === "") {
     event.preventDefault();
-    alert("Your email is REQUIRED.");
+    alert("Your email address is REQUIRED.");
     return false;
   }
 
@@ -94,7 +94,7 @@ function checkRequiredInput(event) {
   checkboxList = document.querySelectorAll("#ast-checkbox [type='checkbox']:checked")
   if (!checkboxList.length) {
     event.preventDefault();
-    alert("Please select at least one required Assistance.");
+    alert("Please select at least one: Consulting, UX/UI Design, Development or Marketing.");
     return false;
   }
 }
@@ -104,11 +104,18 @@ function validateForm() {
 }
 
 window.onload = function() {
+  /*
+    iPhone & iPad don't support upload natively files(except Photos & Videos)
+    to websites without an app
+  */
+  var usrAgent = navigator.userAgent.match(/iPhone|iPad/i)
+  if (usrAgent) {document.getElementsByClassName("display-on-iPhone")[0].style.display = "inherit";}
+
   // Check for the various File API support
   if (window.File && window.FileReader && window.FileList && window.Blob) {
     readFiles();
   } else {
-    alert("The File APIs are not fully supported in this browser.");
+    document.getElementsByClassName("display-on-iPhone")[0].style.display = "inherit";
   }
   validateForm();
 };
